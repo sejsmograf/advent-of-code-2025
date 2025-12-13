@@ -9,8 +9,8 @@
 #include <tuple>
 #include <vector>
 
-using ul = unsigned long long;
-using Point = std::tuple<ul, ul, ul>;
+using l = unsigned long long;
+using Point = std::tuple<l, l, l>;
 using PointPair = std::pair<Point, Point>;
 
 std::vector<Point> readInput() {
@@ -21,9 +21,9 @@ std::vector<Point> readInput() {
 
   while (std::getline(is, line)) {
     std::stringstream ss(line);
-    ul coordX;
-    ul coordY;
-    ul coordZ;
+    l coordX;
+    l coordY;
+    l coordZ;
     char sep;
 
     ss >> coordX;
@@ -71,7 +71,7 @@ findClosestPairs(const std::vector<Point> &input) {
   return pairsWithDistance;
 }
 
-ul silver(const std::vector<std::pair<PointPair, double>>& closestPairs, size_t n) {
+l silver(const std::vector<std::pair<PointPair, double>>& closestPairs, size_t n) {
   std::vector<std::set<Point>> circuits;
 
   for (size_t i = 0; i < n; i++) {
@@ -117,7 +117,7 @@ ul silver(const std::vector<std::pair<PointPair, double>>& closestPairs, size_t 
 }
 
 
-ul gold(const std::vector<std::pair<PointPair, double>>& closestPairs, size_t n) {
+l gold(const std::vector<std::pair<PointPair, double>>& closestPairs, size_t n) {
   std::vector<std::set<Point>> circuits;
 
   size_t index = 0;
